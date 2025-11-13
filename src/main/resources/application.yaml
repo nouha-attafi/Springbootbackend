@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: CoffeeShop API
+  servlet:
+    context-path: /firstProject
+  jpa:
+    open-in-view: false
+
+springdoc:
+  swagger-ui:
+    customCssUrl: /css/coffee-style.css
+    # If you have JS, add customJsUrl here
+    path: /swagger-ui.html
