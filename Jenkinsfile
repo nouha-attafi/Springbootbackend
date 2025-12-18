@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/nouha-attafi/Springbootbackend.git'
+                git branch: 'backend', url: 'https://github.com/nouha-attafi/Springbootbackend.git'
             }
         }
 
