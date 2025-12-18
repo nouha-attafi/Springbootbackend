@@ -6,7 +6,7 @@ pipeline {
         MINIKUBE_IP = "192.168.49.2"
         SONAR_PROJECT_KEY = "my-java-app"
         SONAR_HOST_URL = "http://localhost:9000"
-        SONAR_LOGIN = credentials('sonar') // token SonarQube
+        SONAR_LOGIN = credentials('nouhe') // token SonarQube
     }
 
     stages {
@@ -38,11 +38,11 @@ pipeline {
                     kubectl apply -f spring-deployment.yaml
 
                     # Mettre à jour l'image Docker de l'application
-                    kubectl set image deployment/tpcafe-app tpcafe-app=${DOCKER_IMAGE} -n devops
+                    kubectl set image deployment/my-java-app my-java-app=${DOCKER_IMAGE} -n devops
 
                     # Redémarrer le déploiement
-                    kubectl rollout restart deployment/tpcafe-app -n devops
-                    kubectl rollout status deployment/tpcafe-app -n devops --timeout=5m
+                    kubectl rollout restart deployment/my-java-app -n devops
+                    kubectl rollout status deployment/my-java-app -n devops --timeout=5m
                 """
             }
         }
