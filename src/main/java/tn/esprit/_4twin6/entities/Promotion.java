@@ -27,6 +27,7 @@ public class Promotion {
      String poucentagePromotion;
 
      LocalDate dateDebutPromotion;
+     LocalDate dateFinPromotion;
 
   LocalDate dateFin;
 

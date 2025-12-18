@@ -18,9 +18,4 @@ public class ClientResponse {
     private String nom;
     private String prenom;
     private LocalDate dateNaissance;
-
-    private AdresseResponse adresse;
-    private CarteFideliteResponse carteFidelite;
-    private List<CommandeResponse> commandes;
-
 }

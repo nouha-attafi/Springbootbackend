@@ -7,29 +7,32 @@ import tn.esprit._4twin6.enums.TypeArticle;
 
 import java.util.List;
 
-
 @Entity
+@Table(name = "Article")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-//@RequiredArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @EqualsAndHashCode
-@Table (name = "Article")
+
 public class Article {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-     long idArticle;
-     String nomArticle;
-    Double prixArticle;
-    @Enumerated(EnumType.STRING)
-     TypeArticle typeArticle;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idArticle;
 
-    @OneToMany(mappedBy = "article")
-    List<Detail_Commande> detailCommandes;
-    @ManyToMany
+    private String nomArticle;
+    private float prixArticle;
+
+    @Enumerated(EnumType.STRING)
+    private TypeArticle typeArticle;
+
+    @ManyToMany(cascade = CascadeType.ALL)
     List<Promotion> promotions;
+
+    @OneToMany (mappedBy = "article")
+    List<Detail_Commande>detailCommandes;
+
 }

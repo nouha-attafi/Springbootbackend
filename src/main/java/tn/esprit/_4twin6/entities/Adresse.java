@@ -28,8 +28,6 @@ public class Adresse {
      int codePostal;
 
 
-
-
     @OneToOne
     @JoinColumn(name = "id_client")
     private Client client;

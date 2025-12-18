@@ -27,11 +27,11 @@ public class Client {
 
      String prenom;
 
-     LocalDate dateNaissence;
+     LocalDate dateNaissance;
 
     @OneToOne
     Adresse adresse;
-    @OneToOne(mappedBy = "client")
+    @OneToOne(mappedBy = "client",cascade = CascadeType.ALL, orphanRemoval = true)
     CarteFidelite carteFidelite;
     @OneToMany(mappedBy = "client")
     List<Commande> commandes;

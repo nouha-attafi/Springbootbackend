@@ -20,7 +20,7 @@ public class CarteFidelite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long idCarteFidelite;
-    Integer pointsAccumules;
+    Integer pointsAcumules;
     LocalDate dateCreation;
     @OneToOne
     Client client;

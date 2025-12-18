@@ -14,6 +14,6 @@ public class CarteFideliteResponse {
     private Long idCarteFidelite;
     private Integer pointsAcumules;
     private LocalDate dateCreation;
-    private ClientResponse clientResponse;
+    private ClientResponse client;
 }
 
